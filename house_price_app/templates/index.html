@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+
+    <style href="C:\Users\naman\OneDrive\Attachments\Documents\Desktop\IT Project\house_price_app\static\style.css" rel="stylesheet"></style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🏠 House Price Prediction</h1>
+    <p>Fill in house details to estimate price</p>
+
+    <form action="/predict" method="post">
+
+        <div class="form-group">
+            <label>Area (sqft)</label>
+            <input type="number" name="area" required>
+        </div>
+
+        <div class="form-group">
+            <label>Bedrooms</label>
+            <input type="number" name="bedrooms" required>
+        </div>
+
+        <div class="form-group">
+            <label>Bathrooms</label>
+            <input type="number" name="bathrooms" required>
+        </div>
+
+        <div class="form-group">
+            <label>Stories</label>
+            <input type="number" name="stories" required>
+        </div>
+
+        <div class="form-group">
+            <label>Parking Spaces</label>
+            <input type="number" name="parking" required>
+        </div>
+
+        <div class="form-group">
+            <label>Main Road Access</label>
+            <select name="mainroad" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Guest Room</label>
+            <select name="guestroom" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Basement</label>
+            <select name="basement" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Hot Water Heating</label>
+            <select name="hotwaterheating" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Air Conditioning</label>
+            <select name="airconditioning" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Preferred Area</label>
+            <select name="prefarea" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Furnishing Status</label>
+            <select name="furnishingstatus" required>
+                <option value="furnished">Fully Furnished</option>
+                <option value="semi-furnished">Semi-Furnished</option>
+                <option value="unfurnished">Unfurnished</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="result-box">
+        💰 {{ prediction_text }}
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
